@@ -46,7 +46,7 @@
 	  <div class="location col-md-2">
 		<h1 class="name">{weatherData.name}</h1>
 	  </div>
-	  <div class="info col-md-10">
+	  <div class="info col-md-8">
 		{#if weatherData.main}
 		  <h1 class="medium temp">{Math.round(weatherData.main.temp)} &deg;C</h1>
 		  <h4 class=" feeling">Feels {Math.round(weatherData.main.feels_like)} &deg;C</h4>
@@ -54,10 +54,14 @@
 		  <p>No temperature data available</p>
 		{/if}
 		{#if weatherData.weather}
-		  <p class=" desc">{weatherData.weather[0].main}</p>
+		  
+		  <img src="http://openweathermap.org/img/wn/{weatherData.weather[0].icon}.png" alt="">
 		{:else}
 		  <p>No weather data available</p>
 		{/if}
+	  </div>
+	  <div class="col-md-2">
+
 	  </div>
 	{:else}
 	  <p>Loading...</p>
